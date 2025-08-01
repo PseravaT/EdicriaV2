@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --primary-color: #007a25;
+    --hover-color: #009933;
+    --text-color: #fff;
+    --menu-bg-color: #025019;
+    --background-color: #d3f3dc;
+}
+
+html{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex:1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.maxWidth {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== DESKTOP ===== */
+@media screen and (min-width: 42em) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1em 2em;
+    }
+
+    .titulo {
+        font-size: 2.2em;
+    }
+
+    .nav_header ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1em;
+        width: auto;
+    }
+
+    .nav_header li {
+        width: auto;
+    }
+
+    .nav_header a {
+        padding: 0.8em 1.2em;
+    }
+
+    .conteudo_central .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .blocos_info {
+        width: calc(50% - 1em);
+    }
 }
