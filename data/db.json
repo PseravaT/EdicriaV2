@@ -28,5 +28,32 @@
     ],
     "spotifyEmbed": "https://open.spotify.com/embed/album/7zwPBW2cZWLHNHxeOunZoO?utm_source=generator"
     }
+],
+"conteudoCaixas": [
+    {
+    "image": "/images/lamp.png",
+    "alt": "Ícone de lâmpada representando propósito",
+    "title": "Propósito",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    },
+    {
+    "image": "/images/playlist.png",
+    "alt": "Ícone de playlist representando músicas",
+    "title": "Playlists",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    },
+    {
+    "image": "/images/livro.png",
+    "alt": "Ícone de livro representando conhecimento",
+    "title": "Livros",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    },
+    {
+    "image": "/images/logo.png",
+    "alt": "Ícone de união representando comunidade",
+    "title": "União",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    }
 ]
+
 }
