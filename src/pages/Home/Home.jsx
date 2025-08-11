@@ -15,7 +15,7 @@ return (
 
 
 
-//map para cada array caixa ele vai usar a função <InformacoeCaixa /> / uso do Spread (...) para pegar todas as informações das caixas
+//vai puxar do json pelo fetch, da map para cada array caixa ele vai usar a função <InformacoeCaixa /> / uso do Spread (...) para pegar todas as informações das caixas
 export default function Home() {
     const { data, isPending, error } = useFetch('http://localhost:3000/conteudoCaixas');
 return (

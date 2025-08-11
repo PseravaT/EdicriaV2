@@ -3,7 +3,7 @@
     {
     "id": "1",
     "title": "Espadachim",
-    "image": "/img/oedc.jpg",
+    "image": "/images/oedc.png",
     "genere": [
         "Ação",
         "Fantasia"
@@ -18,7 +18,7 @@
     {
     "id": "2",
     "title": "Caixa de pássaros",
-    "image": "/img/cdp.jpg",
+    "image": "/images/cdp.jpg",
     "genere": [
         "Terror",
         "Distopia"
