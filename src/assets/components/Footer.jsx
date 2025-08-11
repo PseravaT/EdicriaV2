@@ -1,4 +1,4 @@
-import logoFooter from '../assets/images/20250603_1116_Retrato Criativo da Equipe_remix_01jwv2byhsfgdt0z4znq795c95.png'
+import logoFooter from '../images/20250603_1116_Retrato Criativo da Equipe_remix_01jwv2byhsfgdt0z4znq795c95.png'
 
 export default function Footer() {
 return (

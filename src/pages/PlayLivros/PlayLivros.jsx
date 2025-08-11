@@ -5,7 +5,9 @@ import { useState } from 'react';
 function InformacaoPL ({id, title, image,genere,description, spotifyEmbed}){
   const [expandido, setExpandido] = useState(false);
 
+  //se for um Array ele executa o "join" (junta todos os itens do Array em uma única String) se não for um array usa description 
   const textoCompleto = Array.isArray(description) ? description.join(''): description;
+  // cria a versao curta aonde pega o texto completo do 0 ao 300 caractere acrescentando o ...
   const textoCurto = textoCompleto.split('').slice(0,300).join('') + '...'
 
 
@@ -20,7 +22,7 @@ function InformacaoPL ({id, title, image,genere,description, spotifyEmbed}){
           {expandido ? 'Ler menos' : 'Ler mais'}
         </button>
       </div>
-      // eslint-disable-next
+
       <iframe
         src={spotifyEmbed}
         frameborder="0"
@@ -28,6 +30,7 @@ function InformacaoPL ({id, title, image,genere,description, spotifyEmbed}){
         allowFullScreen
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
+        title={`Spotify embed do álbum ${title}`}
       ></iframe>
 
 

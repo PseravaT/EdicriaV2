@@ -1,0 +1,96 @@
+.bloco h2{
+    text-align: center;
+}
+.bloco {
+    background-color: rgba(128, 128, 128, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1.5em;
+    border-radius: 10px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create {
+    color: #555;
+    max-width: 400px;
+    width: 90%;
+    margin: 60px auto;
+    background: #dcd5cb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 33px;
+    padding: 30px;
+}
+
+.create label span {
+    display: block;
+    margin: 30px 0 10px;
+}
+
+.create p {
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+
+.create input[type="text"],
+.create textarea,
+.create select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.create button {
+    width: 100%;
+    max-width: 150px;
+    font-size: 1em;
+    color: #fff;
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--menu-bg-color);
+    cursor: pointer;
+    text-decoration: none;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+.create button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.genero {
+    display: flex;
+    align-items: center;
+}
+
+.genero button {
+    margin-left: 10px;
+}
+
+/* Media query para telas pequenas */
+@media (max-width: 480px) {
+    .bloco {
+        padding: 1em;
+    }
+
+    .create {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .genero {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .genero button {
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
