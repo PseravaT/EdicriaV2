@@ -28,12 +28,14 @@ export default function CriarPlayLivro() {
         'Aventura'
     ];
 
+    //encaminha ousuário para a tela das PL após enviar o fomrulário
     useEffect(() => {
         if (submitted && data && !isPending && !error) {
             navigate('/PlayLivros');
         }
     }, [submitted, data, isPending, error, navigate]);
 
+    //cria um link temporário para ele no nevegador e guardar esse link no setimage
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -41,6 +43,7 @@ export default function CriarPlayLivro() {
         }
     };
 
+    // se genero foir null ou vazio ele retorna/ se o genero nao ja foi adicionado, adiciona/ ...genres adiciona os generos citados anteriormente/ limpa o formulário select
     const handleAddGenre = () => {
         if (!selectedGenre) return;
         if (!genres.includes(selectedGenre)) {
@@ -48,8 +51,6 @@ export default function CriarPlayLivro() {
         }
         setSelectedGenre('');
     };
-
-
 
 
     const convertSpotifyLink = (link) => {
@@ -73,14 +74,14 @@ export default function CriarPlayLivro() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        //se o Arrya genero for igual ao vazio vai emitir esse frase
         if (genres.length === 0) {
             alert('Adicione pelo menos um gênero!');
             return;
         }
-
         const embedLink = convertSpotifyLink(spotifyEmbed);
 
+        //enviar para o bd todos essas infos
         setSubmitted(true);
         postData({
             title,
@@ -95,61 +96,40 @@ export default function CriarPlayLivro() {
         <section className="bloco">
             <div className="create">
                 <h2 className="page-title">Crie seu PlayLivro</h2>
-
                 <form onSubmit={handleSubmit}>
+                    {/* PARTE DE TITULO */}
                     <label>
                         <span>Título do PL:</span>
-                        <input
-                            type="text"
-                            onChange={(e) => setTitle(e.target.value)}
-                            value={title}
-                            required
-                        />
+                        <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} required/>
                     </label>
-
+                    {/* PARTE DE iMAGENS */}
                     <label>
                         <span>Imagem:</span>
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={handleImageChange}
-                        />
-                        {image && (
-                            <img src={image} className='imgPreview' alt="Preview"/>
-                        ) }
+                        <input type="file" accept="image/*" onChange={handleImageChange}/>
+                        {image && ( <img src={image} className='imgPreview' alt="Preview"/>) }
                     </label>
-
+                    {/* PARTE DE GENEROS */}
                     <label>
                         <span>Gêneros:</span>
                         <div className="genero">
-                            <select
-                                value={selectedGenre}
-                                onChange={(e) => setSelectedGenre(e.target.value)}
-                            >
+                            <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
                                 <option value="">Selecione um gênero</option>
                                 {commonGenres.map((g, i) => (
-                                    <option key={i} value={g} required>
-                                        {g}
-                                    </option>
+                                    <option key={i} value={g} required> {g} </option>
                                 ))}
                             </select>
-                            <button
-                                className="btn"
-                                type="button"
-                                onClick={handleAddGenre}
-                            >
+                            <button className="btn" type="button" onClick={handleAddGenre}>
                                 Add
                             </button>
                         </div>
                     </label>
-
                     <p>
                         Gêneros atuais:{' '}
                         {genres.map((g, i) => (
                             <em key={i}>{g}{i < genres.length - 1 ? ', ' : ''}</em>
                         ))}
                     </p>
-
+                    {/* PARTE DE DESCRIÇÃO */}
                     <label>
                         <span>Descrição:</span>
                         <textarea
@@ -157,17 +137,11 @@ export default function CriarPlayLivro() {
                             value={description}
                         />
                     </label>
-
+                    {/* PARTE DE SPOTIFY */}
                     <label>
                         <span>Link do Spotify:</span>
-                        <input
-                            type="text"
-                            placeholder="Cole o link do Spotify (playlist, álbum ou música)"
-                            value={spotifyEmbed}
-                            onChange={(e) => setSpotifyEmbed(e.target.value)}
-                        />
+                        <input type="text" placeholder="Cole o link do Spotify (playlist, álbum ou música)" value={spotifyEmbed} onChange={(e) => setSpotifyEmbed(e.target.value)}/>
                     </label>
-
                     <button className="btn" disabled={isPending}>
                         {isPending ? 'Enviando...' : 'Enviar'}
                     </button>
