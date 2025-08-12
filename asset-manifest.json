@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/EdicriaV2/static/css/main.5311630f.css",
+    "main.js": "/EdicriaV2/static/js/main.aec1c976.js",
+    "static/media/geraLogo.png": "/EdicriaV2/static/media/geraLogo.121d3318f0abe73e8a40.png",
+    "static/media/20250603_1116_Retrato Criativo da Equipe_remix_01jwv2byhsfgdt0z4znq795c95.png": "/EdicriaV2/static/media/20250603_1116_Retrato Criativo da Equipe_remix_01jwv2byhsfgdt0z4znq795c95.33cba539a07da88b88cc.png",
+    "static/media/logo.png": "/EdicriaV2/static/media/logo.9ccfb2ca899a4c458fdf.png",
+    "static/media/notFound.jpg": "/EdicriaV2/static/media/notFound.5e3aef01104a2e732c66.jpg",
+    "index.html": "/EdicriaV2/index.html",
+    "main.5311630f.css.map": "/EdicriaV2/static/css/main.5311630f.css.map",
+    "main.aec1c976.js.map": "/EdicriaV2/static/js/main.aec1c976.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5311630f.css",
+    "static/js/main.aec1c976.js"
+  ]
+}
