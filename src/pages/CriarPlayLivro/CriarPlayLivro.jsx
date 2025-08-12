@@ -13,9 +13,10 @@ export default function CriarPlayLivro() {
     const [spotifyEmbed, setSpotifyEmbed] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
-    const { postData, data, isPending, error } = useFetch('http://localhost:3000/articles');
+    const { postData, data, isPending, error } = useFetch('http://localhost:3000/articles', 'POST');
     const navigate = useNavigate();
 
+    //definição dos generos disponíveis
     const commonGenres = [
         'Romance',
         'Ficção Científica',
@@ -48,18 +49,27 @@ export default function CriarPlayLivro() {
         setSelectedGenre('');
     };
 
+
+
+
     const convertSpotifyLink = (link) => {
-        if (!link.includes('spotify.com')) return link;
+    // Se o link for inválido ou já for de embed, retorna como está.
+    if (!link.includes('open.spotify.com') || link.includes('/embed/')) {
+        return link;
+    }
 
-        // Remove parâmetros extras
-        let cleanLink = link.split('?')[0];
+    // Remove parâmetros extras, como "?si=..."
+    const cleanLink = link.split('?')[0];
 
-        // Se já for embed, retorna como está
-        if (cleanLink.includes('/embed/')) return cleanLink;
+    // Tenta substituir para cada tipo de link.
+    // O replace só funcionará para o tipo correspondente.
+    const embedLink = cleanLink
+        .replace('/track/', '/embed/track/')
+        .replace('/playlist/', '/embed/playlist/')
+        .replace('/album/', '/embed/album/');
 
-        // Converte link normal para embed
-        return cleanLink.replace('open.spotify.com/', 'open.spotify.com/embed/');
-    };
+    return embedLink;
+};
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -105,12 +115,8 @@ export default function CriarPlayLivro() {
                             onChange={handleImageChange}
                         />
                         {image && (
-                            <img
-                                src={image}
-                                alt="Preview"
-                                style={{ maxWidth: '300px', marginTop: '10px' }}
-                            />
-                        )}
+                            <img src={image} className='imgPreview' alt="Preview"/>
+                        ) }
                     </label>
 
                     <label>
@@ -122,7 +128,7 @@ export default function CriarPlayLivro() {
                             >
                                 <option value="">Selecione um gênero</option>
                                 {commonGenres.map((g, i) => (
-                                    <option key={i} value={g}>
+                                    <option key={i} value={g} required>
                                         {g}
                                     </option>
                                 ))}
@@ -160,9 +166,6 @@ export default function CriarPlayLivro() {
                             value={spotifyEmbed}
                             onChange={(e) => setSpotifyEmbed(e.target.value)}
                         />
-                        <small>
-                            Pode colar o link normal ou o código de incorporação — vamos converter para embed automaticamente.
-                        </small>
                     </label>
 
                     <button className="btn" disabled={isPending}>

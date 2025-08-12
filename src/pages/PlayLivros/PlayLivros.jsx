@@ -2,13 +2,10 @@ import './PlayLivros.css'
 import { useFetch } from '../../hook/useFetch'
 import { useState } from 'react';
 
-function InformacaoPL ({id, title, image,genere,description, spotifyEmbed}){
+function InformacaoPL ({id, title, image,genres,description, spotifyEmbed}){
   const [expandido, setExpandido] = useState(false);
 
-  //se for um Array ele executa o "join" (junta todos os itens do Array em uma única String) se não for um array usa description 
-  const textoCompleto = Array.isArray(description) ? description.join(''): description;
-  // cria a versao curta aonde pega o texto completo do 0 ao 300 caractere acrescentando o ...
-  const textoCurto = textoCompleto.split('').slice(0,300).join('') + '...'
+  const textoCurto = description.slice(0, 300) + '...';
 
 
   return (
@@ -16,11 +13,12 @@ function InformacaoPL ({id, title, image,genere,description, spotifyEmbed}){
       <img src={image} alt={title} className='img_articles' />
       <div className="descricao_livro">
         <h2>{title}</h2>
-        <p className="genero">{genere.join(', ')}</p>
-        <p>{expandido ? textoCompleto : textoCurto}</p>
-        <button onClick={() => setExpandido(!expandido)} className="botao_ver_mais">
+        <p className="genero">{genres.join(', ')}</p>
+        <p>{expandido ? description : textoCurto}</p>
+        {description.length > 100 ? (<button onClick={() => setExpandido(!expandido)} className="botao_ver_mais">
           {expandido ? 'Ler menos' : 'Ler mais'}
-        </button>
+        </button>) : null}
+        
       </div>
 
       <iframe

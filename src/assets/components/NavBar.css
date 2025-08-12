@@ -70,6 +70,7 @@ header {
 
     .nav_header li {
         width: auto;
+        border-radius: 23px;
     }
 
     .nav_header a {

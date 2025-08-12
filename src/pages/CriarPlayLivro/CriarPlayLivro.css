@@ -14,14 +14,15 @@
 
 .create {
     color: #555;
-    max-width: 400px;
-    width: 90%;
+    max-width: 800px; 
+    width: 100%;     
     margin: 60px auto;
     background: #dcd5cb;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 33px;
     padding: 30px;
 }
+
 
 .create label span {
     display: block;
@@ -57,6 +58,12 @@
     text-decoration: none;
     margin: 20px auto;
     transition: all 0.3s ease;
+}
+
+.imgPreview {
+    max-width: 300px;
+    margin-top: 10px;
+    height: 300px;
 }
 
 .create button:hover {
