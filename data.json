@@ -1,0 +1,62 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "Espadachim",
+      "image": "/images/oedc.png",
+      "genres": [
+        "Ação",
+        "Fantasia"
+      ],
+      "description": "Como um bom livro de Ação e Aventura, com grande foco na ação, nada melhor do que uma boa trilha sonora de Rock🤘 A recomendação da casa com o álbum  Space Rider da banda ficcional Star-Lord. Um álbum criado para o jogo Marvel's Guardian of The Galaxy(2021) que cumpre muito bem o seu papel de álbum genérico de Rock, com letra simples e muita guitarra Tudo que você precisa pra ficar na vibe de enfrentar os perigos da vida em Kurgala auxiliado por suas espadas gêmeas",
+      "spotifyEmbed": "https://open.spotify.com/embed/album/4nuvHnLgUd5AuTFpQcSC3t?utm_source=generator"
+    },
+    {
+      "id": "2",
+      "title": "Caixa de pássaros",
+      "image": "/images/cdp.jpg",
+      "genres": [
+        "Terror",
+        "Distopia"
+      ],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni odio laboriosam deserunt repellendus consectetur ratione provident, labore excepturi ipsa doloribus officiis ducimus eligendi reprehenderit? Repudiandae quisquam quia animi at ducimus error eveniet ut illum, recusandae aliquid nobis, et sapiente minima. Iure illo eveniet molestiae dolorum deserunt? Voluptate officiis sunt aut veniam ducimus eum laudantium sed. Consectetur possimus fuga earum, labore quae quaerat voluptatibus ipsa hic.",
+      "spotifyEmbed": "https://open.spotify.com/embed/album/7zwPBW2cZWLHNHxeOunZoO?utm_source=generator"
+    },
+    {
+      "id": "43d9",
+      "title": "Caminho dos Reis ",
+      "image": "blob:http://localhost:3001/c29d52c9-078c-41c9-a054-4102735d00ee",
+      "genres": [
+        "Fantasia"
+      ],
+      "description": "asdasdasd",
+      "spotifyEmbed": "https://open.spotify.com/intl-pt/embed/album/6TkE0QEZnDt6ABujASZMuj"
+    }
+  ],
+  "conteudoCaixas": [
+    {
+      "image": "/images/lamp.png",
+      "alt": "Ícone de lâmpada representando propósito",
+      "title": "Propósito",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    },
+    {
+      "image": "/images/playlist.png",
+      "alt": "Ícone de playlist representando músicas",
+      "title": "Playlists",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    },
+    {
+      "image": "/images/livro.png",
+      "alt": "Ícone de livro representando conhecimento",
+      "title": "Livros",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    },
+    {
+      "image": "/images/logo.png",
+      "alt": "Ícone de união representando comunidade",
+      "title": "União",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    }
+  ]
+}
