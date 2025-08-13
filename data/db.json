@@ -1,10 +1,9 @@
-
 {
   "articles": [
     {
       "id": "1",
       "title": "Espadachim",
-      "image": "../../assets/images/oedc.png",
+      "image": "/images/oedc.jpg",
       "genres": [
         "Ação",
         "Fantasia"

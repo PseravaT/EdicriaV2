@@ -16,6 +16,16 @@
     max-width: 900px;
 }
 
+    .botao_excluir{
+    display: flex;
+    align-items: center;
+    background-color: #325712;
+    color: #fff;
+    border: none;
+    border-radius: 33px;
+    box-shadow: 0 5px 6px rgba(8, 8, 8, 0.3);
+    cursor: pointer;
+    }
 .articles_style img {
     width: 200px;
     height: auto;
